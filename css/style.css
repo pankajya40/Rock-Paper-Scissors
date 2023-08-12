@@ -20,11 +20,12 @@ body {
   width: 120px;  
 }
 
-.reset-button {
+.reset-button, .autoPlay-start-button, .autoPlay-stop-button {
   border: none;
   padding: 10px 15px;
   cursor: pointer;
   box-shadow: 2px 3px 20px black;
+  margin: 5px;
 }
 
 .result, .score {

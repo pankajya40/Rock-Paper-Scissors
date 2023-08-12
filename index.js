@@ -1,3 +1,36 @@
+document.querySelector('.rock-event')
+  .addEventListener('click', () => { 
+    playGame('Rock')
+  }
+);
+document.querySelector('.paper-event')
+  .addEventListener('click', () => { 
+    playGame('Paper');
+  }
+);
+document.querySelector('.scissors-event').
+  addEventListener('click', () => { 
+    playGame('Scissors');
+  }
+);
+
+document.body.addEventListener('keydown', (event) => { 
+  if (event.key === 'r') {
+    playGame('Rock');
+  }
+});
+
+document.body.addEventListener('keydown', (event) => { 
+  if (event.key === 'p') {
+    playGame('Paper');
+  }
+});
+document.body.addEventListener('keydown', (event) => { 
+  if (event.key === 's') {
+    playGame('Scissors');
+  }
+});
+
 let result = "";
 
 let Score = JSON.parse(localStorage.getItem('score')) || { wins: 0, loses: 0, ties: 0 };    /*default operator  5>6 || 4  */
@@ -73,6 +106,19 @@ function UpdatedScore () {
 
 function allReset() {
   document.querySelector('.js-result').innerHTML = null;
-
   document.querySelector('.js-move').innerHTML = null;
 }
+
+let autoplayInterval = '';
+
+function autoplay () {
+  autoplayInterval = setInterval(function(){
+    const playerMove = pickComputerMove();
+    playGame(playerMove);
+  }, 1300);
+}
+
+function stopAutoplay () {
+  clearInterval(autoplayInterval);
+}
+

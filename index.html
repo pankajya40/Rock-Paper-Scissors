@@ -13,9 +13,9 @@
 <body>
   <div class="game-container">
     <h2>Rock Paper Scissors</h2>
-    <button class="button-move" onclick=" playGame('Rock'); "> <img src="./img/Rock-emoji.png" class="move-icon">  </button>
-    <button class="button-move" onclick=" playGame('Paper'); "> <img src="./img/Paper-emoji.png" class="move-icon"> </button>
-    <button class="button-move" onclick=" playGame('Scissors'); "> <img src="./img/Scissors-emoji.png" class="move-icon"> </button>
+    <button class="button-move rock-event" > <img src="./img/Rock-emoji.png" class="move-icon">  </button>
+    <button class="button-move paper-event" > <img src="./img/Paper-emoji.png" class="move-icon"> </button>
+    <button class="button-move scissors-event" > <img src="./img/Scissors-emoji.png" class="move-icon"> </button>
     <p class="js-move"></p>
     <p class="js-result result"></p>
     <p class="js-score-button score"></p>
@@ -27,6 +27,8 @@
       allReset();
       localStorage.removeItem('score');
     ">Reset Score</button>
+    <button class="autoPlay-start-button" onclick="autoplay();">Start Autoplay</button>
+    <button class="autoPlay-stop-button" onclick="stopAutoplay();">Stop Autoplay</button>
   </div>
 
   <script src="./index.js"></script>
